@@ -1,0 +1,49 @@
+! cleanbaja's X resources
+
+! ------------------------------
+!   Rxvt Unicode Configuration
+! ------------------------------
+
+URxvt.font: xft:Liberation:size=11
+! Support opening URLs
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+! Remove scrollbar and add transparent background
+URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt.background: [95]#2e3440
+
+! -------------------------------
+!   General Colors (nord theme)
+! -------------------------------
+
+! special
+*.foreground:   #d8dee9
+*.background:   #2e3440
+*.cursorColor:  #d8dee9
+! black
+*.color0:       #3b4252
+*.color8:       #4c566a
+! red
+*.color1:       #bf616a
+*.color9:       #bf616a
+! green
+*.color2:       #a3be8c
+*.color10:      #a3be8c
+! yellow
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
+! blue
+*.color4:       #81a1c1
+*.color12:      #81a1c1
+! magenta
+*.color5:       #b48ead
+*.color13:      #b48ead
+! cyan
+*.color6:       #88c0d0
+*.color14:      #8fbcbb
+! white
+*.color7:       #e5e9f0
+*.color15:      #eceff4
+

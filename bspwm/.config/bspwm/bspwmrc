@@ -2,10 +2,11 @@
 # cleanbaja's bspwm config :-)
 
 # Autostart
-pgrep -x sxhkd > /dev/null || sxhkd &
-picom -c --config ~/.config/picom/picom.conf &
-$HOME/polybar-collection/launch.sh &
-feh --bg-scale --randomize ~/Wallpapers/*
+pgrep -x sxhkd > /dev/null || sxhkd &     # Start sxhkd (if not already started!)
+picom --vsync &                           # Start picom (with vsync enabled for speed)
+$HOME/polybar-collection/launch.sh &      # Start polybar
+feh --bg-scale --randomize ~/Wallpapers/* # Pick a random wallpaper from $HOME/Wallpapers/
+xsetroot -cursor_name left_ptr            # Set cursor icon
 
 # Workspaces
 bspc monitor -d 1 2 3 4 5
