@@ -1,13 +1,32 @@
 #!/bin/bash
+# simple dotfile installer (with GNU stow)
 
-# Backup all old dotfiles
-mkdir ~/.config_old
-mv ~/.config  ~/.config_old
-mv ~/.Xresources ~/.xinitrc ~/.bashrc ~/.bash_profile ~/.config_old
+# Create backup dir for old dotfiles
+mkdir ~/.old_config
+
+# ===============
+#     Backups
+# ===============
+
+# X
+[ -f "~/.Xresources" ] && mv "~/.Xresources" ~/.old_config
+[ -f "~/.xinitrc" ] && mv "~/.xinitrc" ~/.old_config
+
+# Bash
+[ -f "~/.bash_profile" ] && mv "~/.bash_profile" ~/.old_config
+[ -f "~/.bashrc" ] && mv "~/.bashrc" ~/.old_config
+
+# BSPWM
+[ -d "~/.config/bspwm" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/bspwm/" ~/.old_config/.config/bspwm
+[ -d "~/.config/sxhkd" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/sxhkd/" ~/.old_config/.config/sxhkd
+
+# Picom
+[ -d "~/.config/picom" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/picom/" ~/.old_config/.config/picom
+
 
 # Actually install the dotfiles
-stow X
-stow bash
-stow bspwm
-stow picom 
+stow -t $HOME X
+stow -t $HOME bash
+stow -t $HOME bspwm
+stow -t $HOME picom 
 
