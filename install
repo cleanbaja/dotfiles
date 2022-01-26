@@ -2,8 +2,12 @@
 
 # Backup all old dotfiles
 mkdir ~/.config_old
-mv ~/.* ~/.config_old
+mv ~/.config  ~/.config_old
+mv ~/.Xresources ~/.xinitrc ~/.bashrc ~/.bash_profile ~/.config_old
 
 # Actually install the dotfiles
-stow *
+stow X
+stow bash
+stow bspwm
+stow picom 
 
