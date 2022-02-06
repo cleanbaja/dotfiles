@@ -44,7 +44,7 @@ XF86AudioMute
 
 # TODO: Finish hardware hotkeys
 
-# BSPWM hotkeys ----------------------------ее--
+# BSPWM hotkeys ------------------------------
 
 # Quit/Restart bspwm
 super + alt + {q,r}

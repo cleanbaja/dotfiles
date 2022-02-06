@@ -2,18 +2,18 @@
 # cleanbaja's bspwm config :-)
 
 # Autostart
-pgrep -x sxhkd > /dev/null || sxhkd &     # Start sxhkd (if not already started!)
-picom --vsync &                           # Start picom (with vsync enabled for speed)
-$HOME/polybar-collection/launch.sh &      # Start polybar
-feh --bg-scale --randomize ~/Wallpapers/* # Pick a random wallpaper from $HOME/Wallpapers/
-xsetroot -cursor_name left_ptr            # Set cursor icon
+pgrep -x sxhkd > /dev/null || sxhkd &       # Start sxhkd (if not already started!)
+picom --vsync &                             # Start picom (with vsync enabled for speed)
+~/.config/polybar/launch.sh &               # Start polybar
+feh --bg-scale --randomize ~/Wallpapers/*   # Pick a random wallpaper from $HOME/Wallpapers/
+xsetroot -cursor_name left_ptr              # Set cursor icon
 
 # Workspaces
 bspc monitor -d 1 2 3 4 5
 
 # Random Options
 bspc config border_width         0
-bspc config window_gap           18
+bspc config window_gap           15
 bspc config split_ratio          0.55
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true

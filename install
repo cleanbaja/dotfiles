@@ -1,5 +1,5 @@
 #!/bin/bash
-# simple dotfile installer (with GNU stow)
+# simple dotfiles installer (with GNU stow)
 
 # Create backup dir for old dotfiles
 mkdir ~/.old_config
@@ -9,19 +9,25 @@ mkdir ~/.old_config
 # ===============
 
 # X
-[ -f "~/.Xresources" ] && mv "~/.Xresources" ~/.old_config
-[ -f "~/.xinitrc" ] && mv "~/.xinitrc" ~/.old_config
+[ ! -f "~/.Xresources" ] && mv "~/.Xresources" ~/.old_config
+[ ! -f "~/.xinitrc" ] && mv "~/.xinitrc" ~/.old_config
 
 # Bash
-[ -f "~/.bash_profile" ] && mv "~/.bash_profile" ~/.old_config
-[ -f "~/.bashrc" ] && mv "~/.bashrc" ~/.old_config
+[ ! -f "~/.bash_profile" ] && mv "~/.bash_profile" ~/.old_config
+[ ! -f "~/.bashrc" ] && mv "~/.bashrc" ~/.old_config
 
 # BSPWM
-[ -d "~/.config/bspwm" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/bspwm/" ~/.old_config/.config/bspwm
-[ -d "~/.config/sxhkd" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/sxhkd/" ~/.old_config/.config/sxhkd
+[ ! -d "~/.config/bspwm" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/bspwm/" ~/.old_config/.config/bspwm
+[ ! -d "~/.config/sxhkd" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/sxhkd/" ~/.old_config/.config/sxhkd
 
 # Picom
-[ -d "~/.config/picom" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/picom/" ~/.old_config/.config/picom
+[ ! -d "~/.config/picom" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/picom/" ~/.old_config/.config/picom
+
+# Fonts
+[ ! -d "~/.local/share/fonts" ] && mkdir -p "~/.old_config/.local/share/fonts" && mv "~/.local/share/fonts" ~/.old_config/.local/share/fonts
+
+# Polybar
+[ ! -d "~/.config/polybar" ] && mkdir -p "~/.old_config/.config" && mv "~/.config/polybar/" ~/.old_config/.config/polybar
 
 
 # Actually install the dotfiles
@@ -29,4 +35,9 @@ stow -t $HOME X
 stow -t $HOME bash
 stow -t $HOME bspwm
 stow -t $HOME picom 
+stow -t $HOME polybar
+
+# Install the fonts too
+stow -t $HOME fonts
+cp -r "~/.old_config/.local/share/fonts/*" "~/.local/share/fonts"
 
