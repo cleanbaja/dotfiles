@@ -6,32 +6,27 @@
 
 ;;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 [colors]
-; Main bar bg color 
-background = #001E1E28
-; Modules bg color
-background-alt = #1E1E28
+background       = #001E1E28
+background-alt   = #1E1E28
 background-alt-2 = #bd93f9
 background-alt-3 = #5B5F78
-; main foreground color 
-foreground = #D9E0EE
-; accent color
-accent = #96CDFB
-empty = #00000000
+foreground       = ${xrdb:foreground}
+accent           = #88C0D0
+empty            = #00000000
 
-mauve = #DDB6F2
-black = #131020
-green = #ABE9B3
-red = #F28FAD 	
-orange = #F8BD96
-cyan = #89DCEB
-pink = #F5C2E7
-yellow = #FAE3B0
-blue = #96CDFB
-teal = #B5E8E0
-gray = #988BA2
+mauve    = #DDB6F2
+black    = #131020
+green    = #A3BE8C
+red      = #BF616A 	
+orange   = #D08770
+cyan     = #89DCEB
+pink     = #B48EAD
+yellow   = #EBCB8B
+blue     = #88C0D0
+teal     = #B5E8E0
+gray     = #988BA2
 flamingo = #F2CDCD
 ;;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 
 
 ;;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_;;
@@ -59,10 +54,10 @@ foreground   = ${colors.foreground}
 background   = ${colors.background}
 border-color = ${colors.background}
 border-size  = 5
-font-0 = DaddyTimeMono Nerd Font:size=11;3
-font-1 = Feather:style=Bold:size=11;3
-font-2 = DaddyTimeMono Nerd Font:size=12;3
-font-3 = DaddyTimeMono Nerd Font:size=17;4
+font-0 = "Iosevka Nerd Font:style=Bold Oblique:size=11;3"
+font-1 = "Feather:style=Bold:size=11;3"
+font-2 = "DaddyTimeMono Nerd Font:size=12;3"
+font-3 = "DaddyTimeMono Nerd Font:size=17;4"
 ;;-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/bspwm]
